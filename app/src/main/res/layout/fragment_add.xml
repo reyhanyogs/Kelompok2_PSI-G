@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.add.AddFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/rounded_fill"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintBottom_toTopOf="@id/iv_Picture" />
+
+        <TextView
+            android:id="@+id/tv_Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/menambah_rumah_sakit"
+            android:textSize="24sp"
+            android:fontFamily="@font/alatsi"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:padding="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView
+            android:id="@+id/iv_Picture"
+            android:layout_width="240dp"
+            android:layout_height="240dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/upload_button"
+            android:src="@drawable/upload_logo"
+            android:padding="64dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Title" />
+
+        <TextView
+            android:id="@+id/tv_Upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            android:textSize="24sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/iv_Picture"
+            app:layout_constraintEnd_toEndOf="@id/iv_Picture"
+            app:layout_constraintTop_toBottomOf="@id/iv_Picture" />
+
+        <TextView
+            android:id="@+id/tv_Name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hospital_name"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_Upload"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Name">
+            <EditText
+                android:id="@+id/edt_Name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_Address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hospital_address"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_Name"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_Address">
+            <EditText
+                android:id="@+id/edt_Address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_name"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_Address"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorName">
+            <EditText
+                android:id="@+id/edt_DoctorName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorAge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_age"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorAge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorAge">
+            <EditText
+                android:id="@+id/edt_DoctorAge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorGender"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_gender"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorAge"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorGender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorGender">
+            <EditText
+                android:id="@+id/edt_DoctorGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorSpecialist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_specialist"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorGender"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorSpecialist"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorSpecialist">
+            <EditText
+                android:id="@+id/edt_DoctorSpecialist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_PictureDoctor"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/upload_button"
+            android:src="@drawable/upload_logo"
+            android:padding="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorSpecialist" />
+
+        <TextView
+            android:id="@+id/tv_UploadDoctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            android:textSize="16sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/iv_PictureDoctor"
+            app:layout_constraintEnd_toEndOf="@id/iv_PictureDoctor"
+            app:layout_constraintTop_toBottomOf="@id/iv_PictureDoctor" />
+
+        <TextView
+            android:id="@+id/tv_DoctorName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_name"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="64dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_PictureDoctor"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorName2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorName2">
+            <EditText
+                android:id="@+id/edt_DoctorName2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorAge2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_age"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorName2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorAge2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorAge2">
+            <EditText
+                android:id="@+id/edt_DoctorAge2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorGender2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_gender"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorAge2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorGender2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorGender2">
+            <EditText
+                android:id="@+id/edt_DoctorGender2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tv_DoctorSpecialist2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/doctor_specialist"
+            android:textSize="18sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="24dp"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorGender2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/txt_DoctorSpecialist2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:boxBackgroundColor="@color/white"
+            app:boxBackgroundMode="outline"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp"
+            app:boxStrokeColor="@color/beige"
+            app:hintTextColor="@color/beige"
+            app:hintEnabled="false"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_DoctorSpecialist2">
+            <EditText
+                android:id="@+id/edt_DoctorSpecialist2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ImageView
+            android:id="@+id/iv_PictureDoctor2"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/upload_button"
+            android:src="@drawable/upload_logo"
+            android:padding="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_DoctorSpecialist2" />
+
+        <TextView
+            android:id="@+id/tv_UploadDoctor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/upload_image"
+            android:textSize="16sp"
+            android:fontFamily="@font/alatsi"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/iv_PictureDoctor2"
+            app:layout_constraintEnd_toEndOf="@id/iv_PictureDoctor2"
+            app:layout_constraintTop_toBottomOf="@id/iv_PictureDoctor2" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_Add"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:text="@string/add"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/alatsi"
+            android:background="@drawable/rounded_fill_button"
+            android:layout_marginTop="32dp"
+            android:layout_marginStart="32dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="64dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_UploadDoctor2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
