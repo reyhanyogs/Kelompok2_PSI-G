@@ -40,4 +40,7 @@
     <string name="order">Order</string>
     <string name="there_is_no_history">There Is No History</string>
     <string name="history">HISTORY</string>
+    <string name="delete">Delete</string>
+    <string name="update">Update</string>
+    <string name="update_hospital">Update Hospital</string>
 </resources>

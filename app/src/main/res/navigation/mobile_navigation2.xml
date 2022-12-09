@@ -3,13 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation2"
-    app:startDestination="@+id/navigation_home">
+    app:startDestination="@+id/navigation_home_admin">
 
     <fragment
-        android:id="@+id/navigation_home"
-        android:name="com.example.tugasbesarpsi.ui.home.HomeFragment"
+        android:id="@+id/navigation_home_admin"
+        android:name="com.example.tugasbesarpsi.ui.homeadmin.HomeAdminFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home_admin" >
+        <action
+            android:id="@+id/action_navigation_home_admin_to_anvigation_update"
+            app:destination="@id/navigation_update" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_update"
+        android:name="com.example.tugasbesarpsi.ui.update.UpdateFragment"
+        android:label="@string/update"
+        tools:layout="@layout/fragment_update" >
+        <action
+            android:id="@+id/action_anvigation_update_to_navigation_home_admin"
+            app:destination="@id/navigation_home_admin" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_add"

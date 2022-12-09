@@ -34,8 +34,16 @@ object DAO {
         return db.getReference("Person/$id").orderByKey()
     }
 
-    fun addHospital(hospital: Hospital): Task<Void> {
-        return databaseReferenceHospital.push().setValue(hospital)
+    fun addHospital(hospital: Hospital, idHospital: String): Task<Void> {
+        return databaseReferenceHospital.child(idHospital).setValue(hospital)
+    }
+
+    fun deleteHospital(idHospital: String): Task<Void> {
+        return databaseReferenceHospital.child(idHospital).removeValue()
+    }
+
+    fun updateHospital(idHospital: String, hashMap: HashMap<String, Any>): Task<Void> {
+        return databaseReferenceHospital.child(idHospital).updateChildren(hashMap)
     }
 
     fun getHospital(): Query {
