@@ -54,6 +54,7 @@ object DAO {
         val id = UUID.randomUUID()
         return databaseReferenceHistory.child(idPerson).child(id.toString()).setValue(doctor)
     }
+
     fun getHistory(id: String): Query {
         return db.getReference("History/$id").orderByKey()
     }

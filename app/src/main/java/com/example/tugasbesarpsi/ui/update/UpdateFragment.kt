@@ -97,25 +97,38 @@ class UpdateFragment : Fragment() {
             loadingDialog.startLoadingDialog()
             var url: String
             id = UUID.randomUUID().toString()
-            DAO.uploadImage(avatarHospital, id).addOnSuccessListener { p0 ->
-                val downloadUrl: Task<Uri> = p0!!.storage.downloadUrl
-                downloadUrl.addOnCompleteListener { p0 ->
-                    url = ("https://" + p0.result.encodedAuthority
-                            + p0.result.encodedPath
+            if (this::avatarHospital.isInitialized) {
+                DAO.uploadImage(avatarHospital, id).addOnSuccessListener { p0 ->
+                    val downloadUrl: Task<Uri> = p0!!.storage.downloadUrl
+                    downloadUrl.addOnCompleteListener { p0 ->
+                        url = ("https://" + p0.result.encodedAuthority
+                                + p0.result.encodedPath
                             .toString() + "?alt=media&token="
-                            + p0.result.getQueryParameters("token")[0])
-                    val hashmap = HashMap<String, Any>()
-                    hashmap.put("name", binding.edtName.text.toString())
-                    hashmap.put("address", binding.edtAddress.text.toString())
-                    hashmap.put("avatar", url)
-                    DAO.updateHospital(EXTRA_HOSPITAL.idHospital, hashmap)
-                    binding.ivPicture.setImageDrawable(null)
-                    binding.edtName.text.clear()
-                    binding.edtAddress.text.clear()
-                    loadingDialog.dismissDialog()
-                    view?.findNavController()?.navigate(R.id.action_anvigation_update_to_navigation_home_admin)
-                    Toasty.success(mActivity, "Hospital successfully updated", Toast.LENGTH_SHORT, true).show()
+                                + p0.result.getQueryParameters("token")[0])
+                        val hashmap = HashMap<String, Any>()
+                        hashmap.put("name", binding.edtName.text.toString())
+                        hashmap.put("address", binding.edtAddress.text.toString())
+                        hashmap.put("avatar", url)
+                        DAO.updateHospital(EXTRA_HOSPITAL.idHospital, hashmap)
+                        binding.ivPicture.setImageDrawable(null)
+                        binding.edtName.text.clear()
+                        binding.edtAddress.text.clear()
+                        loadingDialog.dismissDialog()
+                        view?.findNavController()?.navigate(R.id.action_anvigation_update_to_navigation_home_admin)
+                        Toasty.success(mActivity, "Hospital successfully updated", Toast.LENGTH_SHORT, true).show()
+                    }
                 }
+            } else {
+                val hashmap = HashMap<String, Any>()
+                hashmap.put("name", binding.edtName.text.toString())
+                hashmap.put("address", binding.edtAddress.text.toString())
+                DAO.updateHospital(EXTRA_HOSPITAL.idHospital, hashmap)
+                binding.ivPicture.setImageDrawable(null)
+                binding.edtName.text.clear()
+                binding.edtAddress.text.clear()
+                loadingDialog.dismissDialog()
+                view?.findNavController()?.navigate(R.id.action_anvigation_update_to_navigation_home_admin)
+                Toasty.success(mActivity, "Hospital successfully updated", Toast.LENGTH_SHORT, true).show()
             }
         }
     }
