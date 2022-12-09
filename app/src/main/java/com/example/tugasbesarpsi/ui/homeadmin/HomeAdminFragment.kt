@@ -1,6 +1,7 @@
 package com.example.tugasbesarpsi.ui.homeadmin
 
 import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -36,6 +37,11 @@ class HomeAdminFragment : Fragment() {
     ): View {
         _binding = FragmentHomeAdminBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mActivity = context as Activity
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
