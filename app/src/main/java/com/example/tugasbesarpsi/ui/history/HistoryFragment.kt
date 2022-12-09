@@ -41,7 +41,7 @@ class HistoryFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.rvHistory.layoutManager = LinearLayoutManager(context)
         binding.rvHistory.setHasFixedSize(true)
-        adapter = HistoryAdapter()
+        adapter = HistoryAdapter(mActivity)
         binding.rvHistory.adapter = adapter
         loadData()
         if (user != null) {
@@ -74,7 +74,6 @@ class HistoryFragment : Fragment() {
                     for (data in snapshot.children) {
                         val doc = data.getValue<Doctor>()
                         listHistory.add(doc!!)
-                        Log.d("ISI LIST HISTORY", doc.name)
                     }
                     adapter.setItems(listHistory)
                     adapter.notifyDataSetChanged()

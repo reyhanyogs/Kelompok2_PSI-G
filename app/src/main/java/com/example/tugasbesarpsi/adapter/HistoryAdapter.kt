@@ -1,5 +1,6 @@
 package com.example.tugasbesarpsi.adapter
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +10,7 @@ import com.example.tugasbesarpsi.R
 import com.example.tugasbesarpsi.`class`.Doctor
 import com.example.tugasbesarpsi.databinding.ItemRowHistoryBinding
 
-class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.ListViewHolder>() {
+class HistoryAdapter(val context: Context): RecyclerView.Adapter<HistoryAdapter.ListViewHolder>() {
     val listDoctor = ArrayList<Doctor>()
 
     inner class ListViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -17,7 +18,7 @@ class HistoryAdapter: RecyclerView.Adapter<HistoryAdapter.ListViewHolder>() {
         fun bind(doctor: Doctor) {
             with (binding) {
                 tvName.text = doctor.name
-                tvAge.text = doctor.age
+                tvAge.text = context.resources.getString(R.string.age, doctor.age)
                 tvGender.text = doctor.gender
                 tvSpecialist.text = doctor.specialist
                 Glide.with(itemView)

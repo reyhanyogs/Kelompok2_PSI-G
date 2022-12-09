@@ -69,7 +69,6 @@ class HomeFragment : Fragment() {
                 for (data in snapshot.children) {
                     val hospital = data.getValue<Hospital>()
                     hos.add(hospital!!)
-                    Log.d("Cek Data", hospital.name)
                 }
                 adapter.setItems(hos)
                 adapter.notifyDataSetChanged()

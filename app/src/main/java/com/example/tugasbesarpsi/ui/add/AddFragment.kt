@@ -177,9 +177,10 @@ class AddFragment : Fragment() {
                                     }
                                 }
                             }
-                            val hospital = Hospital(url, binding.edtName.text.toString(), binding.edtAddress.text.toString())
+                            id = UUID.randomUUID().toString()
+                            val hospital = Hospital(id, url, binding.edtName.text.toString(), binding.edtAddress.text.toString())
                             hospital.doctor = doctorList.toList()
-                            DAO.addHospital(hospital)
+                            DAO.addHospital(hospital, id)
                             Log.d("Link Download", url)
                             binding.ivPicture.setImageDrawable(null)
                             binding.edtName.text.clear()
